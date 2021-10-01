@@ -1,0 +1,73 @@
+//Notes
+
+// https://www.youtube.com/watch?v=Mus_vwhTCq0
+
+// const foo
+// const bar
+// const baz
+
+// Computed Property Names
+
+// We could console log it regularly i.e. console.log(foo); and so on and so forth
+
+// Or we could do: console.log({foo, bar, baz})
+
+// you can substitute data and css styles by using a percent sign
+
+// repl 3
+
+// const apiUrl = 'https://rickandmortyapi.com/api/location/';
+
+// .then is promises
+
+ async function retrieveLocation (id) {
+   // await fetch(apiUrl) > made it twice
+   const response = await fetch (apiUrl);
+   const json = await response.json();
+   return(json.results[0].name)
+ }
+
+// ^ this is the correct one
+
+
+// function retrieveLocation (id) {
+//   fetch(apiUrl)
+//   .then(function(result) {
+//   return result.json()})
+//   .then(function(json){
+//     console.log(json.results[0].name)
+//     return(json.results[0].name)
+//   })
+// }
+
+// . notation review
+
+
+
+// async function fetchQuote() {
+//     const response = await fetch(baseURL);
+//     // console.log(response);
+//     const json = await response.json();
+//     displayQuote(json)
+
+
+
+// it was the async/await and .then
+
+
+// function displayName (name) {
+//   console.log(name.results[0].name)
+// I can keep everything but console.log, the parenthesis will still be correct
+// }
+//console log is 'tell me'
+// return is 'enter it into the code, assembly line metaphor
+
+//array is square 
+//object is dot
+//first name is line 11
+//second name only exists because it comes from the json
+// I can change it if I wanted to
+//
+
+// Please do not modify this code below
+document.getElementById('getLocation').addEventListener('click',()=>{retrieveLocation(document.getElementById('locationId').value).then(name=>{document.getElementById('locationName').innerHTML=name;});}); -->
